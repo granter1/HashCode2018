@@ -1,11 +1,11 @@
 class Fleet
-  attr_reader :cars
+  attr_reader :vehicles
 
-  def initialize(cars = nil)
-    @cars = cars.equal?(nil) ? [] : cars
+  def initialize(vehicles = nil)
+    @vehicles = vehicles.equal?(nil) ? [] : vehicles
   end
 
-  def add_car(car)
-    @cars.push(car)
+  def add_vehicle(vehicle)
+    @vehicles.push(vehicle)
   end
 end
