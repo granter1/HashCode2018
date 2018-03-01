@@ -12,4 +12,8 @@ class Vehicle
   def distance_from_point(x, y)
     (x-@x_pos).abs + (y-@y_pos).abs
   end
+
+  def to_s
+    "#{@id}"
+  end
 end

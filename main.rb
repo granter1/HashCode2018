@@ -2,9 +2,14 @@
 require_relative 'rides.rb'
 require_relative 'fleet.rb'
 require_relative 'vehicle.rb'
+require_relative 'roster.rb'
 
 first_line=true;
 rides=Rides.new
+roster = Roster.new
+
+ride_id = 0
+
 begin
   IO.foreach('a_example.in') do |line|
     if first_line
@@ -18,8 +23,9 @@ begin
       first_line=false
     else
       data=line.split
-      ride=Ride.new(data[0].to_i,data[1].to_i,data[2].to_i,data[3].to_i,data[4].to_i,data[5].to_i)
+      ride=Ride.new(data[0].to_i,data[1].to_i,data[2].to_i,data[3].to_i,data[4].to_i,data[5].to_i, ride_id)
       rides.add_ride(ride)
+      ride_id += 1
     end
   end
   rides.sort_by_earliest
@@ -28,3 +34,6 @@ begin
     fleet.add_vehicle(Vehicle.new(i+1))
   end
 end
+
+roster.allocate_rides(fleet, rides)
+puts roster.to_s
