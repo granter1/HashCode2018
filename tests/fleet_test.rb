@@ -16,11 +16,18 @@ class FleetTest < Test::Unit::TestCase
     @fleet.vehicles[2].y_pos = 4
   end
 
-  def test_sort_by_range_ascending
+  def test_sort_by_dis_from_start_point!
     @fleet.sort_by_dis_from_start_point!(2, 2)
     assert_equal(2, @fleet.vehicles[0].id, 'Sort order incorrect')
     assert_equal(3, @fleet.vehicles[1].id, 'Sort order incorrect')
     assert_equal(1, @fleet.vehicles[2].id, 'Sort order incorrect')
+  end
+
+  def test_sort_by_id
+    @fleet.sort_by_id!
+    assert_equal(1, @fleet.vehicles[0].id, 'Sort order incorrect')
+    assert_equal(2, @fleet.vehicles[1].id, 'Sort order incorrect')
+    assert_equal(3, @fleet.vehicles[2].id, 'Sort order incorrect')
   end
 
 end

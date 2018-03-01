@@ -10,6 +10,6 @@ class Vehicle
   end
 
   def distance_from_point(x, y)
-    Math.sqrt((x-@x_pos)**2 + (y-@y_pos)**2 )
+    (x-@x_pos).abs + (y-@y_pos).abs
   end
 end
