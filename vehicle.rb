@@ -10,6 +10,7 @@ class Vehicle
     @is_assigned_trip = false
     @time_free=0
   end
+
   def can_assign?(ride)
     if @time_free+distance_from_point(ride.rowStart,ride.columnStart)+ride.distance<ride.finish
       return true
