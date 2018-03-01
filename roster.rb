@@ -8,9 +8,20 @@ class Roster
   end
 
   def allocate_rides(fleet, rides)
+
     rides.ride_list.each_with_index do |ride|
-      #if fleet.cars[0].distance + ride.distance < ride.time
-      @roster[ride] = fleet.vehicles[0]
+      fleet.sort_by_dis_from_start_point!(ride.rowStart, ride.columnStart)
+
+      i=0
+      ride_allocated = false
+      while i<fleet.vehicles.size && !ride_allocated
+        vehicle = fleet.vehicles[i]
+        if vehicle.can_assign?(ride)
+          vehicle.assign(ride)
+          ride_allocated = true
+        end
+        i+=1
+      end
     end
   end
 
