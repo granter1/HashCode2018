@@ -27,6 +27,6 @@ class Vehicle
   end
 
   def to_s
-    return @rides.to_s
+    @rides.to_s << "\n"
   end
 end
