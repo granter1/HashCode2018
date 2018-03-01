@@ -1,7 +1,7 @@
-require_relative 'ride.rb'
+require_relative 'rides.rb'
 
 first_line=true;
-rides=[]
+rides=Rides.new
 begin
   IO.foreach('a_example.in') do |line|
     if first_line
@@ -16,7 +16,7 @@ begin
     else
       data=line.split
       ride=Ride.new(data[0].to_i,data[1].to_i,data[2].to_i,data[3].to_i,data[4].to_i,data[5].to_i)
-      rides.push(ride)
+      rides.add_ride(ride)
     end
   end
 end
