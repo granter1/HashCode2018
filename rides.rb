@@ -14,4 +14,5 @@ class Rides
   def sort_by_earliest
     @ride_list=@ride_list.sort{|c1,c2| c1.start <=> c2.start}
   end
+
 end
