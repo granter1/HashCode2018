@@ -15,8 +15,8 @@ begin
       first_line=false
     else
       data=line.split
-      Ride=Ride.new(data[0],data[1],data[2],data[3],data[4],data[5])
-      rides.push(Ride)
+      ride=Ride.new(data[0].to_i,data[1].to_i,data[2].to_i,data[3].to_i,data[4].to_i,data[5].to_i)
+      rides.push(ride)
 
     end
   end
