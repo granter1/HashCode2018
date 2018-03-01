@@ -1,4 +1,7 @@
 class Ride
+
+  attr_reader :distance
+
   def initialize(rowStart,columnStart,rowFinish,columnFinish,earliestStart,latestFinish)
     @rowStart=rowStart
     @columnStart=columnStart
@@ -8,4 +11,5 @@ class Ride
     @start=earliestStart
     @finish=latestFinish
   end
+
 end
