@@ -30,6 +30,6 @@ class Vehicle
   end
 
   def to_s
-    @rides.to_s << "\n"
+    @id.to_s << ' ' << @rides.to_s << "\n"
   end
 end
