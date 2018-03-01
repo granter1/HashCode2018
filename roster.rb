@@ -3,9 +3,6 @@ require_relative 'rides'
 
 class Roster
 
-  def initialize
-  end
-
   def allocate_rides(fleet, rides)
 
     rides.ride_list.each_with_index do |ride|
@@ -24,15 +21,4 @@ class Roster
     end
   end
 
-  def to_s
-    str = ''
-
-    inverted_roster = @roster.invert
-
-    inverted_roster.each_key do |key|
-      inverted_roster.values_at(key).each do |ride|
-        str += ride.to_s + " "
-      end
-    end
-  end
 end

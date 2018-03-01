@@ -11,7 +11,7 @@ roster = Roster.new
 ride_id = 0
 
 begin
-  IO.foreach('b_should_be_easy.in') do |line|
+  IO.foreach('c_no_hurry.in') do |line|
     if first_line
       data=line.split
       rows=data[0].to_i
