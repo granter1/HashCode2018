@@ -9,6 +9,7 @@ class Rides
 
   def add_ride(ride)
     @ride_list.push(ride)
+
   end
   def sort_by_earliest
     @ride_list=@ride_list.sort{|c1,c2| c1.start <=> c2.start}
