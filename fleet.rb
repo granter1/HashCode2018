@@ -16,4 +16,8 @@ class Fleet
   def sort_by_id!
     @vehicles.sort!{|v1, v2| v1.id <=> v2.id}
   end
+
+  def to_s
+    @vehicles.to_s
+  end
 end

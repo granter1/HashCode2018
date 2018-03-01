@@ -19,12 +19,17 @@ class Vehicle
   end
   def assign(ride)
     @time_free+=distance_from_point(ride.rowStart,ride.columnStart)+ride.distance
+    @rides.add_ride(ride)
   end
   def distance_from_point(x, y)
     (x-@x_pos).abs + (y-@y_pos).abs
   end
 
   def to_s
-    "#{@id}"
+    str = ''
+
+    str += @rides
+
+    return str
   end
 end

@@ -36,4 +36,7 @@ begin
 end
 
 roster.allocate_rides(fleet, rides)
-puts roster.to_s
+
+output = File.open( "outputfile.txt","w" )
+output << fleet.to_s
+output.close
