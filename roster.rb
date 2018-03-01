@@ -13,4 +13,19 @@ class Roster
       @roster[ride] = fleet.vehicles[0]
     end
   end
+
+  def to_s
+    str = ''
+
+    inverted_roster = @roster.invert
+
+    inverted_roster.each_key do |key|
+      inverted_roster.values_at(key).each do |ride|
+        str += ride.to_s + " "
+      end
+      str += "\n"
+    end
+
+    return str
+  end
 end
