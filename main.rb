@@ -22,7 +22,7 @@ begin
       rides.add_ride(ride)
     end
   end
-
+  rides.sort_by_earliest
   fleet = Fleet.new
   for i in 0..@vehicle_count
     fleet.add_vehicle(Vehicle.new(i+1))
