@@ -11,15 +11,15 @@ roster = Roster.new
 ride_id = 0
 
 begin
-  IO.foreach('b_should_be_easy.in') do |line|
+  IO.foreach('a_example.in') do |line|
     if first_line
       data=line.split
       rows=data[0].to_i
       columns=data[1].to_i
       @vehicle_count=data[2].to_i
-      rideCount=data[3].to_i
-      bonusForOnTime=data[4].to_i
-      stepCount=data[5].to_i
+      ride_count=data[3].to_i
+      bonus_for_on_time=data[4].to_i
+      step_count=data[5].to_i
       first_line=false
     else
       data=line.split
