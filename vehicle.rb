@@ -7,4 +7,8 @@ class Vehicle
     @id = id
     @x_pos, @y_pos = 0
   end
+
+  def to_s
+    "#{@id}"
+  end
 end
