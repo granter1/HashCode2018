@@ -11,7 +11,18 @@ class Rides
     @ride_list.push(ride)
 
   end
+
   def sort_by_earliest
     @ride_list=@ride_list.sort{|c1,c2| c1.start <=> c2.start}
+  end
+
+  def to_s
+    str = ''
+
+    @ride_list.each do |ride|
+      str += ride.to_s + " "
+    end
+
+    return str
   end
 end

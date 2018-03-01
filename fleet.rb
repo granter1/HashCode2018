@@ -18,6 +18,12 @@ class Fleet
   end
 
   def to_s
-    @vehicles.to_s
+    str = ''
+
+    @vehicles.each do |vehicle|
+      str += vehicle.to_s
+    end
+
+    return str
   end
 end

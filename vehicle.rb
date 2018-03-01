@@ -29,7 +29,7 @@ class Vehicle
   def to_s
     str = ''
 
-    str += @rides
+    str += @rides.to_s
 
     return str
   end
