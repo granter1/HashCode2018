@@ -12,6 +12,22 @@ class Vehicle
   end
 
   def can_assign?(ride)
+    if @time_free + distance_from_point(ride.rowStart,ride.columnStart) <= ride.start && @time_free+distance_from_point(ride.rowStart,ride.columnStart)+ride.distance<ride.finish
+      return true
+    else
+      return false
+    end
+  end
+
+  def can_assign_even_if_late?(ride)
+    if @time_free + distance_from_point(ride.rowStart,ride.columnStart) <= ride.start
+      return true
+    else
+      return false
+    end
+  end
+
+  def can_assign_with_late_start?(ride)
     if @time_free+distance_from_point(ride.rowStart,ride.columnStart)+ride.distance<ride.finish
       return true
     else
